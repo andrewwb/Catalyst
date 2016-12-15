@@ -19,35 +19,32 @@ namespace Catalyst.Data
             context.Database.EnsureCreated();
 
             // Ensure Stephen (IsAdmin)
-            var stephen = await userManager.FindByNameAsync("Stephen.Walther@CoderCamps.com");
-            if (stephen == null)
+            var andrew = await userManager.FindByNameAsync("abuttram9@gmail.com");
+            if (andrew == null)
             {
                 // create user
-                stephen = new ApplicationUser
-                {
-                    UserName = "Stephen.Walther@CoderCamps.com",
-                    Email = "Stephen.Walther@CoderCamps.com"
+                andrew = new ApplicationUser {
+                    UserName = "abuttram9@gmail.com",
+                    Email = "abuttram9@gmail.com",
+                    FirstName = "Andrew",
+                    LastName = "Buttram",
+                    PhoneNumber = "7777777777",
+                    EmployeeNumber = "Dev1",
+                    IsHourly = false,
+                    Wage = 75000m,
+                    Address = new Address {
+                        AptNumber = "1A",
+                        City = "Santa Maria",
+                        State = "California",
+                        Street = "111 Main St",
+                        Zip = "93454"
+                    }
                 };
-                await userManager.CreateAsync(stephen, "Secret123!");
+                await userManager.CreateAsync(andrew, "Secret123!");
 
                 // add claims
-                await userManager.AddClaimAsync(stephen, new Claim("IsAdmin", "true"));
+                await userManager.AddClaimAsync(andrew, new Claim("IsAdmin", "true"));
             }
-
-            // Ensure Mike (not IsAdmin)
-            var mike = await userManager.FindByNameAsync("Mike@CoderCamps.com");
-            if (mike == null)
-            {
-                // create user
-                mike = new ApplicationUser
-                {
-                    UserName = "Mike@CoderCamps.com",
-                    Email = "Mike@CoderCamps.com"
-                };
-                await userManager.CreateAsync(mike, "Secret123!");
-            }
-
-
         }
 
     }
