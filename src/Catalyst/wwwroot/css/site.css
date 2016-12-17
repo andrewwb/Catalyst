@@ -17,9 +17,44 @@ h1{
 }
 
 .col-md-10{
-    padding: 0 5%;
+    padding: 0 3%;
 }
 
+.dashboard-item {
+    width: 90%;
+    height: 35%;
+    margin: 2% 2% 1.5% 2%;
+    border: 1px solid #262626;
+    border-radius: 2%;
+}
+
+.dashboard-icon {
+    height: 100%;
+    width: 5%;
+    margin-right: 3%;
+    font-size: 32pt;
+    color: #00ff90;
+}
+
+.dashboard-item-header {
+    margin-top: 2%;
+    margin-left: 2%;
+    height: 35%;
+}
+
+.dashboard-item-header div {
+    width: 100%;
+}
+
+.dashboard-item-header h3, h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.dashboard-item-header div h5 {
+    margin-top: 0%;
+    margin-left: 3%;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
