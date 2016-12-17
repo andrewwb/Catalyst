@@ -2,6 +2,7 @@ namespace Catalyst.Controllers {
 
     export class HomeController {
         public message = 'Hello from the home page!';
+        constructor(public NavService: Catalyst.Services.NavService) { }
     }
 
 

@@ -1,6 +1,6 @@
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    background-color: #1f1f1f;
+    color: white;
 }
 
 /* Wrapping element */
@@ -31,4 +31,38 @@ textarea {
     .carousel-caption {
         z-index: 10 !important;
     }
+}
+
+.full-width{
+    width: 100%;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.half-width{
+    width: 50%;
+}
+
+.half-height{
+    height: 50%;
+}
+
+.height-80{
+    height: 80%;
+}
+
+.width-80{
+    width: 80%;
+}
+
+.fill{
+    height: 100%;
+    width: 100%;
+}
+
+.fill-half{
+    height: 50%;
+    width: 50%;
 }

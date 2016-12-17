@@ -1,0 +1,32 @@
+﻿.sideNav {
+    height: 100%;
+    color: gray;
+    padding: 0;
+    background-color: #262626;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+}
+
+    .navList li {
+        padding: 10px;
+    }
+
+        .navList li:hover {
+            color: #1f1f1f;
+            background-color: #00ff90;
+            cursor: pointer;
+        }
+
+.navProfile {
+    padding: 10px;
+    height: 10%;
+    width: 100%;
+}
+
+.currentPage {
+    border-left: 3px solid #00ff90;
+    color: #cccccc;
+}

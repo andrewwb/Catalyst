@@ -13,6 +13,12 @@ namespace Catalyst {
                 controller: Catalyst.Controllers.HomeController,
                 controllerAs: 'controller'
             })
+            .state('warehouses', {
+                url: '/warehouses',
+                templateUrl: '/ngApp/views/home.html',
+                controller: Catalyst.Controllers.HomeController,
+                controllerAs: 'controller'
+            })
             .state('secret', {
                 url: '/secret',
                 templateUrl: '/ngApp/views/secret.html',

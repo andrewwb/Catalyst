@@ -3,25 +3,27 @@
     <title>Catalyst</title>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/flex.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/sideNav.css" rel="stylesheet" />
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
-    <div class="container">
-        <h1>Catalyst</h1>
-        <div>
-          <a href="/">Home</a> /
-           <a href="/about">About</a>
-
-           / <a href="/secret">Secret</a> /
-           <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
-           <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
-           <div ng-show="account.isLoggedIn()">
-               [{{account.getUserName()}}]
-           </div> 
+    <div class="container-fluid">
+        <div class="row">
+            <div ng-controller="NavController as nav" class="col-md-2 sideNav flex-column">
+                <div class="navProfile"><b>{{account.getUserName()}}</b></div>
+                <ul class="navList">
+                    <li ng-class="nav.NavService.setCurrentPageStyle('home')" ui-sref="home">Home</li>
+                    <li ng-class="nav.NavService.setCurrentPageStyle('warehouses')" ui-sref="warehouses">Warehouses</li>
+                    <li ng-class="nav.NavService.setCurrentPageStyle('employees')">Employees</li>
+                    <li ng-class="nav.NavService.setCurrentPageStyle('items')">Items</li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <ui-view></ui-view>
+            </div>
         </div>
-        <hr />
-
-        <ui-view></ui-view>
     </div>
 
     <!-- Library Files -->
@@ -35,7 +37,9 @@
     <!-- App Files-->
     <script src="/ngapp/app.js"></script>
     <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="~/ngApp/controllers/navController.js"></script>
     <script src="/ngapp/services/services.js"></script>
+    <script src="~/ngApp/services/navService.js"></script>
 
 
     <!-- Security -->
