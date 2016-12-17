@@ -14,7 +14,7 @@ using System.IO;
 using Catalyst.Data;
 using Catalyst.Models;
 using Catalyst.Services;
-
+using Catalyst.Infrastructure;
 
 namespace Catalyst
 {
@@ -55,8 +55,11 @@ namespace Catalyst
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-            
 
+            //Services
+            services.AddScoped<EmployeesService>();
+            //Repositories
+            services.AddScoped<EmployeesRepository>();
             
                         // add security policies
                         services.AddAuthorization(options =>

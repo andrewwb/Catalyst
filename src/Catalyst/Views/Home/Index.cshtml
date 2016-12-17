@@ -18,10 +18,10 @@
                     <b>{{account.getUserName()}}</b>
                 </div>
                 <ul class="navList">
-                    <li ng-class="nav.NavService.setCurrentPageStyle('home')" ui-sref="home">Dashboard</li>
+                    <li ng-class="nav.NavService.setCurrentPageStyle('dashboard')" ui-sref="dashboard">Dashboard</li>
                     <li ng-class="nav.NavService.setCurrentPageStyle('warehouses')" ui-sref="warehouses">Warehouses</li>
-                    <li ng-class="nav.NavService.setCurrentPageStyle('employees')">Employees</li>
-                    <li ng-class="nav.NavService.setCurrentPageStyle('items')">Items</li>
+                    <li ng-class="nav.NavService.setCurrentPageStyle('employees')" ui-sref="employees">Employees</li>
+                    <li ng-class="nav.NavService.setCurrentPageStyle('items')" ui-sref="items">Items</li>
                 </ul>
             </div>
             <div class="col-md-10 flex-column">
@@ -41,6 +41,7 @@
 
     <!-- App Files-->
     <script src="/ngapp/app.js"></script>
+    <script src="~/ngApp/filters/filters.js"></script>
     <script src="/ngapp/controllers/controllers.js"></script>
     <script src="~/ngApp/controllers/navController.js"></script>
     <script src="/ngapp/services/services.js"></script>

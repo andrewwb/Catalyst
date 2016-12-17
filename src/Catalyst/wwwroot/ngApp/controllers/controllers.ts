@@ -1,10 +1,25 @@
 namespace Catalyst.Controllers {
 
-    export class HomeController {
-        public date: Date
+    export class DashboardController {
+        public date: Date;
         constructor(public $http: ng.IHttpService, public NavService: Catalyst.Services.NavService) {
             this.date = new Date();
             $http.get('api/dashboard').then(() => {})
+        }
+    }
+
+    export class WarehouseController {
+
+    }
+
+    export class EmployeeController {
+        public date: Date;
+        public employees;
+        constructor(public NavService: Catalyst.Services.NavService, $http: ng.IHttpService) {
+            this.date = new Date();
+            $http.get('api/employees').then((res) => {
+                this.employees = res.data;
+            })
         }
     }
 

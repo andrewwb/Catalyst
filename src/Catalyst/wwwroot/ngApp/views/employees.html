@@ -1,0 +1,25 @@
+﻿<div class="display-flex flex-column">
+    <div>
+        <h1>Employees</h1>
+        <h5 class="accent-font-color new-account-btn">New Employee Account</h5>
+    </div>
+
+    <table class="table employee-table">
+        <tr>
+            <td>Employee #</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Phone #</td>
+            <td>Email</td>
+            <td>Address</td>
+        </tr>
+        <tr ng-repeat="employee in controller.employees">
+            <td>{{employee.employeeNumber}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.phoneNumber | phone}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.address}}</td>
+        </tr>
+    </table>
+</div>

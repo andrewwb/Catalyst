@@ -7,16 +7,22 @@ namespace Catalyst {
     ) => {
         // Define routes
         $stateProvider
-            .state('home', {
+            .state('dashboard', {
                 url: '/',
                 templateUrl: '/ngApp/views/home.html',
-                controller: Catalyst.Controllers.HomeController,
+                controller: Catalyst.Controllers.DashboardController,
                 controllerAs: 'controller'
             })
             .state('warehouses', {
                 url: '/warehouses',
                 templateUrl: '/ngApp/views/home.html',
-                controller: Catalyst.Controllers.HomeController,
+                controller: Catalyst.Controllers.WarehouseController,
+                controllerAs: 'controller'
+            })
+            .state('employees', {
+                url: '/employees',
+                templateUrl: '/ngApp/views/employees.html',
+                controller: Catalyst.Controllers.EmployeeController,
                 controllerAs: 'controller'
             })
             .state('secret', {
