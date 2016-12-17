@@ -2,9 +2,9 @@ namespace Catalyst.Controllers {
 
     export class HomeController {
         public date: Date
-        constructor(public NavService: Catalyst.Services.NavService) {
+        constructor(public $http: ng.IHttpService, public NavService: Catalyst.Services.NavService) {
             this.date = new Date();
-            console.log(this.date);
+            $http.get('api/dashboard').then(() => {})
         }
     }
 

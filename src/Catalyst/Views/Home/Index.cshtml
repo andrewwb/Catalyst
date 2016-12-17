@@ -13,7 +13,10 @@
     <div class="container-fluid">
         <div class="row">
             <div ng-controller="NavController as nav" class="col-md-2 sideNav flex-column">
-                <div class="navProfile"><b>{{account.getUserName()}}</b></div>
+                <div class="navProfile display-flex flex-row align-center">
+                    <img src="~/images/faceshot.jpg" class="img-circle img-responsive" style="max-width: 18%" />
+                    <b>{{account.getUserName()}}</b>
+                </div>
                 <ul class="navList">
                     <li ng-class="nav.NavService.setCurrentPageStyle('home')" ui-sref="home">Dashboard</li>
                     <li ng-class="nav.NavService.setCurrentPageStyle('warehouses')" ui-sref="warehouses">Warehouses</li>
