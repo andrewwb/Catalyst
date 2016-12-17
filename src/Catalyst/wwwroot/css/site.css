@@ -1,6 +1,23 @@
 body {
     background-color: #1f1f1f;
-    color: white;
+    color: #cccccc;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1{
+    margin-top: 0;
+}
+
+.primary-container {
+    padding: 5%;
+}
+
+.accent-font-color {
+    color: #00ff90;
+}
+
+.col-md-10{
+    padding: 0 5%;
 }
 
 /* Wrapping element */

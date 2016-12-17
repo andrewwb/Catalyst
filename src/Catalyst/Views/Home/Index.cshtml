@@ -3,6 +3,7 @@
     <title>Catalyst</title>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
     <link href="~/css/flex.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/css/sideNav.css" rel="stylesheet" />
@@ -14,13 +15,14 @@
             <div ng-controller="NavController as nav" class="col-md-2 sideNav flex-column">
                 <div class="navProfile"><b>{{account.getUserName()}}</b></div>
                 <ul class="navList">
-                    <li ng-class="nav.NavService.setCurrentPageStyle('home')" ui-sref="home">Home</li>
+                    <li ng-class="nav.NavService.setCurrentPageStyle('home')" ui-sref="home">Dashboard</li>
                     <li ng-class="nav.NavService.setCurrentPageStyle('warehouses')" ui-sref="warehouses">Warehouses</li>
                     <li ng-class="nav.NavService.setCurrentPageStyle('employees')">Employees</li>
                     <li ng-class="nav.NavService.setCurrentPageStyle('items')">Items</li>
                 </ul>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 flex-column">
+                <div class="navProfile"></div>
                 <ui-view></ui-view>
             </div>
         </div>
