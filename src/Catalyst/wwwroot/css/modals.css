@@ -1,0 +1,18 @@
+﻿.employees-modal {
+    height: 80%;
+    background-color: #1f1f1f;
+    padding: 2%;
+    color: gray;
+}
+
+.employees-modal-form {
+    height: 100%;
+    width: 100%;
+}
+
+.employees-modal-form input {
+    border: 0;
+    border-bottom: 1px solid gray;
+    background-color: #1f1f1f;
+    color: #cccccc;
+}
