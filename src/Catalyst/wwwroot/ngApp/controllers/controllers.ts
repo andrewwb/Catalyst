@@ -15,7 +15,7 @@ namespace Catalyst.Controllers {
     export class EmployeeController {
         public date: Date;
         public employees;
-        constructor(public NavService: Catalyst.Services.NavService, $http: ng.IHttpService) {
+        constructor(public NavService: Catalyst.Services.NavService, $http: ng.IHttpService, public ModalService: Catalyst.Interfaces.IModalService) {
             this.date = new Date();
             $http.get('api/employees').then((res) => {
                 this.employees = res.data;
