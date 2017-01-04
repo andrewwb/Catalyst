@@ -48,6 +48,21 @@ namespace Catalyst.Services {
             });
         }
 
+        // Register new employee account
+        public registerEmployee(userLogin) {
+            return this.$q((resolve, reject) => {
+                this.$http.post('/api/account/register/employee', userLogin)
+                    .then((result) => {
+                        this.storeUserInfo(result.data);
+                        resolve(result);
+                    })
+                    .catch((result) => {
+                        var messages = this.flattenValidation(result.data);
+                        reject(messages);
+                    });
+            });
+        }
+
 
         public logout() {
             // clear all of session storage (including claims)

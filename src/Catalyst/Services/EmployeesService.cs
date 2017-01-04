@@ -26,7 +26,7 @@ namespace Catalyst.Services
                             LastName = u.LastName,
                             PhoneNumber = u.PhoneNumber,
                             Email = u.Email,
-                            Address = $"{u.Address.Street}, {u.Address.City} {u.Address.State}, {u.Address.Zip}"
+                            Address = u.Address
                         }).ToList();
             return dtos;
         }

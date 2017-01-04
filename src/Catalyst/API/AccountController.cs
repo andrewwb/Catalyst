@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Catalyst.Models;
 using Catalyst.Services;
 using Catalyst.ViewModels.Account;
+using Catalyst.ViewModels.DataTransferObjects;
 
 namespace Catalyst.Controllers
 {
@@ -110,6 +111,39 @@ namespace Catalyst.Controllers
                     //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
                     //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation(3, "User created a new account with password.");
+                    var userViewModel = await GetUser(user.UserName);
+                    return Ok(userViewModel);
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed
+            return BadRequest(this.ModelState);
+        }
+
+        [HttpPost("Register/Employee")]
+        [AllowAnonymous]
+        public async Task<IActionResult> RegisterEmployee([FromBody]AppUserDto model) {
+            if (ModelState.IsValid) {
+                var user = new ApplicationUser {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    PhoneNumber = model.PhoneNumber,
+                    EmployeeNumber = model.EmployeeNumber,
+                    Address = model.Address
+                };
+                var result = await _userManager.CreateAsync(user, $"{model.LastName}123!");
+                if (result.Succeeded) {
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
+                    // Send an email with this link
+                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                    //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
+                    //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
+                   // await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
                     var userViewModel = await GetUser(user.UserName);
                     return Ok(userViewModel);

@@ -6,5 +6,15 @@
         }
     }
 
-    angular.module('Catalyst').filter("phone", phoneNumber)
+    function address() {
+        return function (input: Catalyst.Interfaces.IAddress) {
+            if (!input.aptNumber) {
+                return `${input.street} ${input.city} ${input.state} ${input.zip}`;
+            }
+            return `${input.street} APT# ${input.aptNumber} ${input.city } ${input.state } ${input.zip }`;
+        }
+    }
+
+    angular.module('Catalyst').filter("phone", phoneNumber);
+    angular.module('Catalyst').filter("address", address);
 }

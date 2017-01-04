@@ -3,18 +3,19 @@
         <h1>New Employee</h1>
     </div>
     <div class="employees-modal-form display-flex flex-column justify-space-around" >
-        <input class="" placeholder="Employee number" />
-        <input class="" placeholder="First name" />
-        <input class="" placeholder="Last name" />
-        <input class="" placeholder="Email" />
-        <input class="" placeholder="Phone number" />
-        <input class="" placeholder="Street" />
-        <input class="" placeholder="City" />
-        <input class="" placeholder="State" />
-        <input class="" placeholder="Zip" />
+        <input class="" placeholder="Employee number" ng-model="registerUser.employeeNumber"/>
+        <input class="" placeholder="First name" ng-model="registerUser.firstName" />
+        <input class="" placeholder="Last name" ng-model="registerUser.lastName" />
+        <input class="" placeholder="Email" ng-model="registerUser.email" />
+        <input class="" placeholder="Phone number" ng-model="registerUser.phoneNumber" />
+        <input class="" placeholder="Street" ng-model="registerUser.address.street" />
+        <input class="" placeholder="City" ng-model="registerUser.address.city" />
+        <input class="" placeholder="State" ng-model="registerUser.address.state" />
+        <input class="" placeholder="Zip" ng-model="registerUser.address.zip" />
+        <!-- Dont put password inputs. Default password will be set -->
     </div>
     <div>
-        <button>Cancel</button>
-        <button>Add</button>
+        <button class="negative-button" ng-click="modal.closeModal()">Cancel</button>
+        <button class="positive-button" ng-click="modal.addEmployee(registerUser)">Add</button>
     </div>
 </div>

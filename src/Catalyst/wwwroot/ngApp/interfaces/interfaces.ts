@@ -4,4 +4,13 @@
         $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance;
         addEmployeeAccount();
     }
+
+    export interface IAddress {
+        id: number;
+        city: string;
+        state: string;
+        street: string;
+        zip: string;
+        aptNumber: string;
+    }
 }

@@ -16,3 +16,29 @@
     background-color: #1f1f1f;
     color: #cccccc;
 }
+
+.positive-button {
+    background-color: #1f1f1f;
+    border: 1px solid grey;
+    height: 8%;
+    width: 15%;
+}
+
+.negative-button {
+    background-color: #1f1f1f;
+    border: 1px solid grey;
+    width: 15%;
+    height: 8%;
+}
+
+.positive-button:hover{
+    background-color: #00ff90;
+    color: #1f1f1f;
+    border: 1px solid #1f1f1f;
+}
+
+.negative-button:hover{
+    background-color: #ff6666;
+    color: #1f1f1f;
+    border: 1px solid #1f1f1f;
+}
