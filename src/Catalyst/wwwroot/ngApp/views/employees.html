@@ -11,9 +11,9 @@
             <td>Last name</td>
             <td>Phone #</td>
             <td>Email</td>
-            <td>Address</td>
+            <td class="display-flex justify-space-between">Address <input placeholder="Search" class="employee-search" ng-model="employeeSearch"/></td>
         </tr>
-        <tr ng-repeat="employee in controller.employees">
+        <tr ng-repeat="employee in controller.employees | filter: employeeSearch" ng-click="controller.ModalService.employeeProfileModal(employee)">
             <td>{{employee.employeeNumber}}</td>
             <td>{{employee.firstName}}</td>
             <td>{{employee.lastName}}</td>

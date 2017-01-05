@@ -71,7 +71,27 @@ h1{
 }
 
 .employee-table tbody tr:first-child {
-    color: #00ff90;
+    color: #00ff90 !important;
+    background-color: #1f1f1f !important;
+    cursor: default !important;
+}
+
+.employee-table tbody tr:hover {
+    /*color: #00ff90;*/
+    background-color: #262626;
+    cursor: pointer;
+}
+
+.employee-search {
+    background-color: #1f1f1f;
+    border: 0;
+    border-bottom: 1px solid #262626;
+    color: white;
+}
+
+.employee-search:focus {
+    outline-width: 0;
+    border-bottom: 1px solid #00ff90;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */

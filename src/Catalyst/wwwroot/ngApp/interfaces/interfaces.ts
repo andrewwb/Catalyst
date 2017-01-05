@@ -13,4 +13,14 @@
         zip: string;
         aptNumber: string;
     }
+
+    export interface IEmployee {
+        id: string;
+        firstName: string;
+        lastName: string;
+        email: string;
+        phoneNumber: string;
+        employeeNumber: string;
+        address: IAddress
+    }
 }

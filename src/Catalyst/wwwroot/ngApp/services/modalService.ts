@@ -4,11 +4,22 @@
         constructor(public $uibModal: ng.ui.bootstrap.IModalService) { }
 
         public addEmployeeAccount() {
-            this.modalInstance = this.$uibModal.open({
+            this.$uibModal.open({
                 templateUrl: 'ngApp/views/modals/addEmployeeModal.html',
                 controller: Catalyst.Controllers.ModalController,
                 controllerAs: 'modal',
-                size: 'md'
+                size: 'md',
+                resolve: { employee: null }
+            })
+        }
+
+        public employeeProfileModal(employee: Catalyst.Interfaces.IEmployee) {
+            this.$uibModal.open({
+                templateUrl: 'ngApp/views/modals/employeeProfileModal.html',
+                controller: Catalyst.Controllers.ModalController,
+                controllerAs: 'modal',
+                size: 'md',
+                resolve: { employee: employee }
             })
         }
     }

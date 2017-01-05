@@ -1,7 +1,10 @@
 ﻿namespace Catalyst.Controllers {
     export class ModalController {
         public validationMessages;
-        constructor(public $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance, public accountService: Catalyst.Services.AccountService) { }
+        constructor(
+            public $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
+            public accountService: Catalyst.Services.AccountService,
+            public employee: Catalyst.Interfaces.IEmployee) { }
 
         public closeModal() {
             this.$uibModalInstance.close();
