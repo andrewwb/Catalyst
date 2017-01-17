@@ -42,3 +42,13 @@
     color: #1f1f1f;
     border: 1px solid #1f1f1f;
 }
+
+ .employees-modal div img {
+     height: 40%;
+     width: 40%;
+ }
+
+ .profile-modal-header h3 {
+     margin: 0;
+     padding-left: 10%;
+ }
