@@ -21,6 +21,12 @@ namespace Catalyst.Controllers {
                 this.employees = res.data;
             })
         }
+
+        public addEmployeeAccount() {
+            this.ModalService.addEmployeeAccount().then((res) => {
+                this.employees = res;
+            })
+        }
     }
 
 

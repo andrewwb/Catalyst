@@ -10,9 +10,10 @@
             this.$uibModalInstance.close();
         }
 
+        //Invoked from addEmployeeModal.html
         public addEmployee(registerUser) {
             this.accountService.registerEmployee(registerUser).then(() => {
-                // Pop over notification 
+                // Pop over notification
                 this.$uibModalInstance.close();
             }).catch((results) => {
                 this.validationMessages = results;
